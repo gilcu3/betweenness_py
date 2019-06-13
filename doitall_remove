@@ -1,0 +1,33 @@
+#! /usr/bin/env bash
+
+# python experiments_iot.py rmat_4096 toy_dynamic
+# python experiments_iot.py rmat_4096 brandes
+
+parallel -kj 4 python experiments_iot.py {1} {2} ::: rmat_1024 rmat_2048 rmat_4096 rmat_8192 rmat_16384 ::: toy_dynamic brandes 
+parallel -kj 4 python experiments_iot.py {1} {2} ::: cagr epa eva ::: toy_dynamic icentral brandes 
+parallel -kj 4 python experiments_iot.py {1} {2} ::: collegemsg nutella wikivote ::: toy_dynamic brandes
+# for data in rmat_1024 rmat_2048 rmat_4096 rmat_8192 rmat_16384
+# do
+#     for algo in toy_dynamic brandes 
+#     do
+#         python experiments_iot.py $data $algo
+#     done
+# done
+
+# for data in cagr epa eva
+# do
+#     for algo in toy_dynamic icentral brandes 
+#     do
+#         python experiments_iot.py $data $algo
+#     done
+# done
+
+# for data in collegemsg nutella wikivote
+# do
+#     for algo in toy_dynamic brandes
+#     do
+#         python experiments_iot.py $data $algo
+#     done
+# done
+
+

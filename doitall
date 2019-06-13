@@ -1,0 +1,12 @@
+#! /usr/bin/env bash
+
+
+parallel -kj 1 python experiments.py {2} {1}  ::: ibet toy_dynamic icentral brandes ::: cagr epa eva cahepph cahepth egofacebook
+parallel -kj 1 python experiments.py {2} {1}  ::: ibet toy_dynamic brandes ::: collegemsg nutella08 wikivote emaileu nutella04 nutella05 nutella09 wikirfa
+
+parallel -kj 1 python experiments_iot.py {2} {1} ::: toy_dynamic icentral brandes ::: cagr epa eva cahepph cahepth egofacebook
+parallel -kj 1 python experiments_iot.py {2} {1}  ::: toy_dynamic brandes ::: collegemsg nutella08 wikivote emaileu nutella04 nutella05 nutella09 wikirfa
+
+parallel -kj 1 python experiments.py {2} {1}  ::: toy_dynamic brandes ibet  ::: rmat_1024 rmat_2048 rmat_3072 rmat_4096 rmat_5120 rmat_6144 rmat_7168 rmat_8192 rmat_9216 rmat_10240 rmat_11264 rmat_12288 rmat_13312 rmat_14336 rmat_15360 rmat_16384
+parallel -kj 1 python experiments_iot.py {2} {1}  ::: toy_dynamic brandes  ::: rmat_1024 rmat_2048 rmat_3072 rmat_4096 rmat_5120 rmat_6144 rmat_7168 rmat_8192 rmat_9216 rmat_10240 rmat_11264 rmat_12288 rmat_13312 rmat_14336 rmat_15360 rmat_16384
+

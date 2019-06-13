@@ -1,0 +1,4 @@
+#! /usr/bin/env bash
+
+
+parallel -kj 1 python experiments.py {2} {1}  ::: toy_dynamic icentral brandes ::: cahepph 

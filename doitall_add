@@ -1,0 +1,25 @@
+#! /usr/bin/env bash
+
+# python experiments.py cagr brandes
+# exit
+
+parallel -kj 4 python experiments.py {1} {2} ::: cagr epa eva ::: ibet toy icentral brandes
+parallel -kj 4 python experiments.py {1} {2} ::: collegemsg nutella wikivote ::: ibet toy brandes
+# for data in cagr epa eva
+# do
+#     for algo in ibet toy icentral brandes 
+#     do
+#         python experiments.py $data $algo
+#     done
+    
+# done
+
+# for data in collegemsg nutella wikivote
+# do
+#     for algo in ibet toy brandes
+#     do
+#         python experiments.py $data $algo
+#     done
+# done
+
+
